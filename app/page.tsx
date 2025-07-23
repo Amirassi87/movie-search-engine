@@ -15,7 +15,7 @@ type Movie = {
 export default async function Home() {
   const apiKey = process.env.TMDB_API_KEY;
 
-  const res = await fetch(`https://api.themoviedb.org/3/movie/popular`, {
+  const res = await fetch(`https://api.themoviedb.org/3/movie/popular1`, {
     headers: {
       accept: "application/json",
       Authorization: `Bearer ${apiKey}`,
@@ -23,7 +23,7 @@ export default async function Home() {
   });
 
   if (!res.ok) {
-    return { message: "Failed to fetch data" };
+    return <p>Failed to fetch data </p>;
   }
 
   const data = await res.json();
