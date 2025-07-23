@@ -15,10 +15,10 @@ body {
   flex-wrap: wrap;
   width: 72%;
   margin: auto;
-  padding: 2.5rem;
+  padding: 2.5em;
   justify-content: space-around;
   align-items: center;
-  gap: 25px;
+  gap: 1.563em;
 }
 
 .movie-card {
@@ -42,44 +42,43 @@ body {
   width: 60%;
   display: flex;
   flex-direction: column;
-  gap: 15;
-  margin-top: 0.1rem;
+  gap:0.938em;
+  margin-top: 0.1em;
 }
 
 .movie-title {
-  font-size: 1.25em;
-  padding: 1rem 0rem 0rem 1rem;
+  font-size: 1.25rem;
+  padding: 1em 0em 0em 0.5em;
 }
 
 .movie-date {
   color: rgba(0, 0, 0, 0.65);
-  font-size: 12px;
-  padding: 0rem 0rem 0rem 1rem;
+  font-size: 0.75rem;
+  padding: 0em 0em 0em 1em;
 }
 
 .movie-genre {
-  padding: 0rem 0rem 0rem 1rem;
-  font-size: 12px;
+  padding: 0em 0em 0em 1em;
+  font-size: 0.75rem;
 }
 .movie-genre span {
   border: 1px solid rgba(217, 217, 217, 1);
-  padding: 0.2rem;
-  margin-right: 0.5rem;
+  padding: 0.2em;
+  margin-right: 0.5em;
   color: rgba(0, 0, 0, 0.65);
 }
 
 .movie-desc {
-  padding: 0rem 4rem 1rem 1rem;
-
+  padding: 0em 4em 1em 1em;
   height: 130px;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 22px;
   overflow: hidden;
 }
 
 /* Loader */
 .loader {
-	margin: 6rem auto;
+	margin: 6em auto;
 	font-size: 10px;
 	width: 1em;
 	height: 1em;
@@ -187,11 +186,11 @@ body {
 	background-color: #ffffff;
 	width: 35%;
 	margin: 10% auto;
-	padding: 5rem;
+	padding: 5em;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
 }
 
 .error h2 {
-	margin-bottom: 1rem;
+	margin-bottom: 1em;
 }

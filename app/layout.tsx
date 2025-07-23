@@ -1,15 +1,16 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { Inter } from 'next/font/google'
- 
+import type { Metadata } from "next";
+import "./globals.css";
+import { Inter } from "next/font/google";
+
 const inter = Inter({
-  weight: '400',
-  subsets: ['latin'],
-})
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: 'Movies Search Engine',
-  description: 'Search for movies',
+  title: "Movies Search Engine",
+  description: "Search for movies",
 };
 
 export default function RootLayout({
@@ -19,9 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <body className="bg-mycolor">
-        {children}
-        </body>
+      <body>{children}</body>
     </html>
   );
 }
