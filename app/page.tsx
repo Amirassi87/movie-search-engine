@@ -1,41 +1,45 @@
-import MovieCard from "./components/MovieCard";
-import { Suspense } from "react";
-import Loading from "./loading";
+import GoUpButton from './components/GoUpButton';
+import MovieCard from './components/MovieCard';
+import NetworkStatus from './components/NetworkStatus';
 
 
 type Movie = {
   id: number;
   title: string;
   poster_path: string;
-  release_date: Date;
+  release_date: string;
   overview: string;
   genre_ids: number;
 };
 
 export default async function Home() {
-  const apiKey = process.env.TMDB_API_KEY;
+  const apitoken = process.env.TMDB_API_TOKEN;
+  const keyword = 'return';
+  let movies = [];
 
-  const res = await fetch(`https://api.themoviedb.org/3/movie/popular`, {
-    headers: {
-      accept: "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-  });
+    const res = await fetch(
+      `https://api.themoviedb.org/3/search/movie?query=${keyword}`,
+      {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: `Bearer ${apitoken}`,
+        },
+      }
+    );
 
-  if (!res.ok) {
-    return <p>Failed to fetch data </p>;
-  }
-
-  const data = await res.json();
-  const movies = data.results;
-
+    const data = await res.json();
+    movies = await data.results;
+  
   return (
-    <Suspense fallback={<Loading />}>
+    <>
+      <NetworkStatus />
       <div className="movie-container">
         {movies.map((movie: Movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
+        <GoUpButton/>
       </div>
-    </Suspense>
+    </>
   );
 }
