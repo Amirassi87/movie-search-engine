@@ -5,7 +5,6 @@ import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
 
 export default function SearchBar() {
-
   const paramsString = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -14,14 +13,14 @@ export default function SearchBar() {
   const handleSearch = useDebouncedCallback((term: string) => {
     if (term) {
       searchParams.set('query', term);
-      searchParams.set('page', "1");
+      searchParams.set('page', '1');
     } else {
       searchParams.delete('query');
       searchParams.delete('page');
     }
 
     replace(`${pathname}?${searchParams.toString()}`);
-  })
+  });
 
   return (
     <div>

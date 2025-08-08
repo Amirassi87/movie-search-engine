@@ -26,7 +26,7 @@ body {
 
 .no-search-container {
   background-color: white;
-  width:100%;
+  width: 100%;
   height: 100vh;
   margin: auto;
 }
@@ -93,7 +93,7 @@ body {
 .pagination {
   margin: auto;
   padding: 2em;
-  width:100%;
+  width: 100%;
 }
 /* Loader */
 .loader {
@@ -109,7 +109,6 @@ body {
 }
 
 @keyframes mulShdSpin {
-
   0%,
   100% {
     box-shadow:
@@ -226,7 +225,7 @@ body {
   background-color: white;
   display: flex;
   width: 72%;
-  margin:0 auto 0 auto;
+  margin: 0 auto 0 auto;
   padding: 1.5em 2.5em 0 2.5em;
   justify-content: space-around;
   font-size: 0.875em;
@@ -238,7 +237,6 @@ body {
   margin: 0 auto 0 auto;
   padding: 0 0.5em 0 0.5em;
   font-size: 0.875em;
-
 }
 
 .search-bar input {

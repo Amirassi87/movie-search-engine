@@ -4,7 +4,9 @@ import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { Pagination } from 'antd';
 
 export default function PaginationHandler({
-  totalResults, currentPage, query
+  totalResults,
+  currentPage,
+  query,
 }: {
   totalResults: number;
   currentPage: number;
@@ -14,7 +16,7 @@ export default function PaginationHandler({
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const handlePageChange = ((page: number) => {
+  const handlePageChange = (page: number) => {
     const searchParams = new URLSearchParams(params.toString());
 
     if (query) {
@@ -23,19 +25,17 @@ export default function PaginationHandler({
 
     searchParams.set('page', page.toString());
     replace(`${pathname}?${searchParams.toString()}`);
-  })
-
+  };
 
   return (
-    <div className='pagination'>
+    <div className="pagination">
       <Pagination
-      align="center"
+        align="center"
         onChange={handlePageChange}
         current={currentPage}
-        total={totalResults} 
-        showSizeChanger ={false}
-        />
-        
+        total={totalResults}
+        showSizeChanger={false}
+      />
     </div>
   );
 }

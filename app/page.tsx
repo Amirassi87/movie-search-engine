@@ -22,12 +22,11 @@ export default async function Home(props: {
     page?: string;
   }>;
 }) {
-
   const searchParams = await props.searchParams;
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
   const apitoken = process.env.TMDB_API_TOKEN;
-  let movies = [];
+  //let movies = [];
 
   const res = await fetch(
     `https://api.themoviedb.org/3/search/movie?query=${query}&page=${currentPage}`,
@@ -41,27 +40,28 @@ export default async function Home(props: {
   );
 
   const data = await res.json();
-  movies = await data.results;
+  const movies = await data.results;
 
-  if (data.total_results == 0) {
+  if (movies.length == 0 && query !== '') {
     return (
       <div className="movie-container">
-        <div className='search-bar'>
+        <div className="search-bar">
           <SearchBar />
         </div>
-        <div className='no-search-container'>
-          <NoResultWarning/>
+        <div className="no-search-container">
+          <NoResultWarning />
         </div>
-      </div>)
+      </div>
+    );
   }
   return (
     <>
       <NetworkStatus />
       <div className="movie-container">
-        <div className='search-bar'>
+        <div className="search-bar">
           <SearchBar />
         </div>
-        
+
         {movies.map((movie: Movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
@@ -70,10 +70,12 @@ export default async function Home(props: {
             <PaginationHandler
               currentPage={currentPage}
               query={query}
-              totalResults={data.total_pages} />
+              totalResults={data.total_pages}
+            />
           </Suspense>
         ) : (
-          <div className='no-search-container'>"No Movies Searched"</div>)}
+          <div className="no-search-container">No Movies Searched</div>
+        )}
         <GoUpButton />
       </div>
     </>

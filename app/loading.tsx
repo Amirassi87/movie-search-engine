@@ -1,7 +1,6 @@
 import React from 'react';
 import { Flex, Skeleton } from 'antd';
 
-
 const App: React.FC = () => (
   <Flex
     justify="center"
@@ -11,10 +10,10 @@ const App: React.FC = () => (
       width: '72%',
       backgroundColor: 'white',
       margin: 'auto',
-    }}>
-    <Skeleton active/>
+    }}
+  >
+    <Skeleton active />
   </Flex>
-
-)
+);
 
 export default App;
