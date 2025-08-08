@@ -3,25 +3,21 @@
 <p id="description"></p>
 <br/>
 
-
 <h2>🚀 Demo</h2>
 
 <br/>
 
 <h2>Project Screenshots:</h2>
 
-
-  
 <h2>🧐 Features</h2>
 
 Here're some of the project's best features:
 
-*   List Popular Movies
-*   Display Movie Information (Title,Date,Description)
-*   Search A Movie
+- List Popular Movies
+- Display Movie Information (Title,Date,Description)
+- Search A Movie
 
 <br/>
-
 
 <h2>🛠️ Installation Steps:</h2>
 
@@ -37,17 +33,16 @@ npm install
 npm run dev
 ```
 
-  
   <br/>
 
 <h2>💻 Built with</h2>
 
 Technologies used in the project:
 
-*   Next.js 15.4.1
-*   React 19.1.0
-*   TypeScript
-*   fetch() API
-*   date-fns 
-*   CSS
-*   andtd
+- Next.js 15.4.1
+- React 19.1.0
+- TypeScript
+- fetch() API
+- date-fns
+- CSS
+- andtd

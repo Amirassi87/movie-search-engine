@@ -13,7 +13,6 @@ type Movie = {
 };
 
 export default function MovieCard({ movie }: { movie: Movie }) {
-  
   return (
     <div className="movie-card">
       <div className="movie-img">

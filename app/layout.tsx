@@ -3,6 +3,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 // import NetworkStatus from './components/NetworkStatus';
+import TopMenu from './components/TopMenu';
 
 const inter = Inter({
   weight: '400',
@@ -23,7 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <AntdRegistry>{children}</AntdRegistry>
+        <AntdRegistry>
+          <div className="top-menu">
+            <TopMenu />
+          </div>
+
+          {children}
+        </AntdRegistry>
       </body>
     </html>
   );
