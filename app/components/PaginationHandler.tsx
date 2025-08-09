@@ -2,6 +2,7 @@
 import React from 'react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { Pagination } from 'antd';
+import { useRef } from 'react';
 
 export default function PaginationHandler({
   totalResults,
@@ -14,7 +15,8 @@ export default function PaginationHandler({
 }) {
   const params = useSearchParams();
   const pathname = usePathname();
-  const { replace } = useRouter();
+  const router = useRouter();
+  const paginationRef = useRef<HTMLDivElement>(null);
 
   const handlePageChange = (page: number) => {
     const searchParams = new URLSearchParams(params.toString());
@@ -24,11 +26,11 @@ export default function PaginationHandler({
     }
 
     searchParams.set('page', page.toString());
-    replace(`${pathname}?${searchParams.toString()}`);
+    router.replace(`${pathname}?${searchParams.toString()}`, { scroll: false });
   };
 
   return (
-    <div className="pagination">
+    <div className="pagination" ref={paginationRef}>
       <Pagination
         align="center"
         onChange={handlePageChange}

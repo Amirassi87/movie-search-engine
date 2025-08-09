@@ -2,7 +2,7 @@
 import React from 'react';
 import { Input } from 'antd';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import { useDebouncedCallback } from 'use-debounce';
+import debounce from 'lodash.debounce';
 
 export default function SearchBar() {
   const paramsString = useSearchParams();
@@ -10,7 +10,7 @@ export default function SearchBar() {
   const { replace } = useRouter();
   const searchParams = new URLSearchParams(paramsString);
 
-  const handleSearch = useDebouncedCallback((term: string) => {
+  const handleSearch = debounce((term: string) => {
     if (term) {
       searchParams.set('query', term);
       searchParams.set('page', '1');
@@ -20,7 +20,7 @@ export default function SearchBar() {
     }
 
     replace(`${pathname}?${searchParams.toString()}`);
-  });
+  }, 1000);
 
   return (
     <div>
