@@ -56,12 +56,34 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.938em;
-  margin-top: 0.1em;
+  margin-top: 0.2em;
+  padding: 0em 0em 0em 0.5em;
+}
+
+.movie-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5em;
+  padding: 0 10px 0 10px;
+  gap: 20px;
 }
 
 .movie-title {
-  font-size: 1.25rem;
-  padding: 1em 0em 0em 0.5em;
+  font-size: 1.1rem;
+  /* padding: 1em 0em 0em 0.5em; */
+}
+
+.rating {
+  padding: 0 0 1.3em 0.5em;
+}
+
+.circle-rating {
+  font-size: 0.9em;
+  border-radius: 100%;
+  padding: 0.5em 0.4em 0.5em 0.4em;
+  border: 2px solid rgba(233, 209, 0, 1);
+  align-self: flex-start;
 }
 
 .movie-date {
@@ -86,7 +108,7 @@ body {
   padding: 0em 4em 1em 1em;
   height: 130px;
   font-size: 0.75rem;
-  line-height: 20px;
+  line-height: 1.9em;
   overflow: hidden;
 }
 

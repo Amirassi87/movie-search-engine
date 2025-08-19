@@ -1,15 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Inter } from 'next/font/google';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
-// import NetworkStatus from './components/NetworkStatus';
 import TopMenu from './components/TopMenu';
+import { GenresProvider } from './data/GenresData';
+import { Inter } from 'next/font/google';
+import { GuestSessionProvider } from './data/SessionData';
 
-const inter = Inter({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Movies Search Engine',
@@ -22,15 +19,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>
-        <AntdRegistry>
-          <div className="top-menu">
-            <TopMenu />
-          </div>
-
-          {children}
-        </AntdRegistry>
+    <html lang="en">
+      <body className={inter.className}>
+        <GuestSessionProvider>
+          <GenresProvider>
+            <AntdRegistry>
+              <div className="top-menu">
+                <TopMenu />
+              </div>
+              {children}
+            </AntdRegistry>
+          </GenresProvider>
+        </GuestSessionProvider>
       </body>
     </html>
   );

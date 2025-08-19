@@ -20,7 +20,7 @@ export default function SearchBar() {
     }
 
     replace(`${pathname}?${searchParams.toString()}`);
-  }, 1000);
+  }, 400);
 
   return (
     <div>

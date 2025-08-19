@@ -1,7 +1,12 @@
-import React from 'react';
+'use client';
+
+import React, { Suspense, useContext } from 'react';
 import Image from 'next/image';
 import { isValid, parseISO, format } from 'date-fns';
 import { shortenText } from '../utils/shortenText';
+import { GenreContext } from '../data/GenresData';
+import RatingComponent from '../components/RatingComponent';
+import Loading from '../loading';
 
 type Movie = {
   id: number;
@@ -9,10 +14,14 @@ type Movie = {
   poster_path: string;
   release_date: string;
   overview: string;
-  genre_ids: number;
+  genre_ids: number[];
+  vote_average: number;
+  rating: number;
 };
 
 export default function MovieCard({ movie }: { movie: Movie }) {
+  const genreContext = useContext(GenreContext);
+  const genreList = genreContext?.genres ?? [];
   return (
     <div className="movie-card">
       <div className="movie-img">
@@ -30,16 +39,32 @@ export default function MovieCard({ movie }: { movie: Movie }) {
         />
       </div>
       <div className="movie-content ">
-        <div className="movie-title">{movie.title}</div>
+        <div className="movie-header">
+          <div className="movie-title">{movie.title}</div>
+          <div className="circle-rating">{movie.vote_average.toFixed(1)}</div>
+        </div>
         <div className="movie-date">
           {movie.release_date && isValid(parseISO(movie.release_date))
             ? format(new Date(movie.release_date), 'MMMM d, yyyy')
             : 'Unknown release date'}
         </div>
         <div className="movie-genre">
-          <span>genre</span>
+          {genreList
+            .filter((genre) => movie.genre_ids.includes(genre.id))
+            .map((genre) => (
+              <span key={genre.id} className="genre-tag">
+                {genre.name}
+              </span>
+            ))}
         </div>
         <div className="movie-desc">{shortenText(movie.overview)}</div>
+        <div className="rating">
+          {movie.id && (
+            <Suspense key={movie.rating} fallback={<Loading />}>
+              <RatingComponent value={movie.rating} id={movie.id} />
+            </Suspense>
+          )}
+        </div>
       </div>
     </div>
   );
