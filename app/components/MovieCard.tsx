@@ -22,6 +22,14 @@ type Movie = {
 export default function MovieCard({ movie }: { movie: Movie }) {
   const genreContext = useContext(GenreContext);
   const genreList = genreContext?.genres ?? [];
+
+  const circleRatingColor = (rating: number) => {
+    if (rating >= 0 && rating < 3) return 'circle-rating-red';
+    if (rating >= 3 && rating < 5) return 'circle-rating-orange';
+    if (rating >= 5 && rating < 7) return 'circle-rating-yellow';
+    if (rating >= 7) return 'circle-rating-green';
+  };
+
   return (
     <div className="movie-card">
       <div className="movie-img">
@@ -41,7 +49,9 @@ export default function MovieCard({ movie }: { movie: Movie }) {
       <div className="movie-content ">
         <div className="movie-header">
           <div className="movie-title">{movie.title}</div>
-          <div className="circle-rating">{movie.vote_average.toFixed(1)}</div>
+          <div className={circleRatingColor(movie.vote_average)}>
+            {movie.vote_average.toFixed(1)}
+          </div>
         </div>
         <div className="movie-date">
           {movie.release_date && isValid(parseISO(movie.release_date))
