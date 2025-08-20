@@ -5,7 +5,7 @@ import SearchBar from './components/SearchBar';
 import PaginationHandler from './components/PaginationHandler';
 import Loading from './loading';
 import { Suspense } from 'react';
-import NoResultWarning from './components/NoResultWarning';
+import TopRated from './rated/TopRated';
 
 type Movie = {
   id: number;
@@ -53,9 +53,7 @@ export default async function Home(props: {
           <div className="search-bar">
             <SearchBar />
           </div>
-          <div className="no-search-container">
-            <NoResultWarning />
-          </div>
+          <div className="no-search-container"></div>
         </div>
       );
     }
@@ -81,7 +79,7 @@ export default async function Home(props: {
             />
           </Suspense>
         ) : (
-          <div className="no-search-container">No Movies Searched</div>
+          <TopRated />
         )}
         <GoUpButton />
       </div>
