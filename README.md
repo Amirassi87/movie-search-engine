@@ -12,14 +12,10 @@
 
 <p><br>Search tab contains search input field and top rated movies with pagination</p>
 <img src="https://i.ibb.co/YBbWCq2C/1-Copy.png" width="800" height="800/">
-<br><br><br>
 <img src="https://i.ibb.co/VYptVzhs/2-Copy.png" alt="project-screenshot" width="800" height="800/">
-<br><br>
 <p><br>Rated tab contains guest user rated movies</p>
 
 <img src="https://i.ibb.co/DfgN2ybg/3-Copy.png" alt="project-screenshot" width="800" height="800/">
-
-<br><br>
 
 <h2>🧐 Features</h2>
 
