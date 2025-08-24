@@ -1,48 +1,104 @@
-<h1 align="center" id="title">Next.js Movie Search Application</h1>
+<h1 align="center" id="title">Movie Search Web Application</h1>
 
-<p id="description"></p>
-<br/>
-
+<p id="description">This is a web application built with Next.js React and The Movie Database (TMDB) API that allows users to search for movies and manage their rated movies — all without needing to log in using a guest session.</p>
+<br>
 <h2>🚀 Demo</h2>
 
-<br/>
+[https://movie-search-engine-kohl.vercel.app/](https://movie-search-engine-kohl.vercel.app/)
 
-<h2>Project Screenshots:</h2>
+<br>
+<h2 align="center">Project Screenshots:</h2>
+<br>
+<img src="https://pouch.jumpshare.com/preview/wKwreMv75vpW36kFU1xe1grpDrH8W4ab6bPkw51RSQIyrHPd84Yn7o9Tse7hxz7hnfSrJJv0Tq1vPFYEn0QLjQ2WXegUeMFRl2zZpoBiY1U" alt="project-screenshot" width="900" height="900/">
+
+<p><br>Search tab contains search input field and top rated movies with pagination</p>
+<img src="https://i.ibb.co/Y7rggHsV/1.png" alt="project-screenshot" width="900" height="900/">
+<br><br><br>
+<img src=" https://i.ibb.co/Z1Lmgf56/2.png" alt="project-screenshot" width="900" height="900/">
+<br><br>
+<p><br>Rated tab contains guest user rated movies</p>
+
+<img src="https://i.ibb.co/LhBvKbD2/3.png" alt="project-screenshot" width="900" height="900/">
 
 <h2>🧐 Features</h2>
 
 Here're some of the project's best features:
 
-- List Popular Movies
-- Display Movie Information (Title,Date,Description)
-- Search A Movie
-
-<br/>
-
+- Movie Search (Main Tab):
+- Search for movies using TMDB's API.
+- Real-time search with debouncing for performance.
+- Pagination for browsing through search results.
+- Automatically creates a guest session on load to track rated movies.
+- Rated Movies (Rated Tab):
+- Displays all movies rated by the current guest user.
+- Uses the guest session ID to fetch and display previously rated
+- Rate Movies for guest sessions
+<br><br>
 <h2>🛠️ Installation Steps:</h2>
 
-<p>1. clone the project</p>
+<p>1. Install dependencies</p>
 
 ```
 npm install
 ```
 
-<p>2. Start the project</p>
+<p>2. Run development server</p>
 
 ```
 npm run dev
 ```
 
-  <br/>
+<p>3. Start development server</p>
+
+```
+npm run dev
+```
+
+<p>4. Build for production</p>
+
+```
+npm run build
+```
+
+<p>5. Start production server</p>
+
+```
+npm run start
+```
+
+<p>6. Run ESLint</p>
+
+```
+npm run lint
+```
+
+<p>7. Format code with Prettier</p>
+
+```
+npm run format
+```
+
+<p>8. Set up Husky Git hooks</p>
+
+```
+npm run prepare
+```
+
+<br><br>
 
 <h2>💻 Built with</h2>
 
 Technologies used in the project:
 
-- Next.js 15.4.1
-- React 19.1.0
-- TypeScript
-- fetch() API
+- TMDB API
+- React Router DOM
+- React Hooks
+- Lodash Debounce
 - date-fns
-- CSS
-- andtd
+- TypeScript
+- ESLint
+- Prettier
+- Husky
+- Lint-staged
+- Ant Design 5.26.6
+- Next.js 15.4.1 (App Router with Turbopack)
