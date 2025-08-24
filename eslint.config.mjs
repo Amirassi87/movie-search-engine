@@ -22,7 +22,6 @@ const eslintConfig = [
       'no-console': ['error', { allow: ['warn', 'error'] }],
     },
   },
-
 ];
 
 export default eslintConfig;
