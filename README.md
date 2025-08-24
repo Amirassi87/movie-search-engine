@@ -21,16 +21,17 @@
 
 Here're some of the project's best features:
 
-- Movie Search (Main Tab):
+Movie Search (Main Tab):
+
 - Search for movies using TMDB's API.
 - Real-time search with debouncing for performance.
 - Pagination for browsing through search results.
 - Automatically creates a guest session on load to track rated movies.
-- Rated Movies (Rated Tab):
+  Rated Movies (Rated Tab):
 - Displays all movies rated by the current guest user.
 - Uses the guest session ID to fetch and display previously rated
 - Rate Movies for guest sessions
-<br><br>
+
 <h2>🛠️ Installation Steps:</h2>
 
 <p>1. Install dependencies</p>
@@ -80,8 +81,6 @@ npm run format
 ```
 npm run prepare
 ```
-
-<br><br>
 
 <h2>💻 Built with</h2>
 
