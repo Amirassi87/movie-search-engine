@@ -15,6 +15,14 @@ const eslintConfig = [
   },
 
   ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
+
+  {
+    files: ['**/*.js', '**/*.ts', '**/*.tsx'],
+    rules: {
+      'no-console': ['error', { allow: ['warn', 'error'] }],
+    },
+  },
+
 ];
 
 export default eslintConfig;
