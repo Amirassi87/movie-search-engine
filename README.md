@@ -1,7 +1,7 @@
 <h1 align="center" id="title">Movie Search Web Application</h1>
 
 <p id="description">This is a web application built with Next.js React and The Movie Database (TMDB) API that allows users to search for movies and manage their rated movies — all without needing to log in using a guest session.</p>
-<br>
+  <br>
 <h2>🚀 Demo</h2>
 
 [https://movie-search-engine-kohl.vercel.app/](https://movie-search-engine-kohl.vercel.app/)
@@ -26,8 +26,9 @@ Movie Search (Main Tab):
 - Real-time search with debouncing for performance.
 - Pagination for browsing through search results.
 - Automatically creates a guest session on load to track rated movies.
-  <br>
+  <br><br>
   Rated Movies (Rated Tab):
+
 - Displays all movies rated by the current guest user.
 - Uses the guest session ID to fetch and display previously rated
 - Rate Movies for guest sessions
