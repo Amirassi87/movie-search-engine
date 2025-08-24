@@ -5,7 +5,6 @@ import SearchBar from './components/SearchBar';
 import PaginationHandler from './components/PaginationHandler';
 import Loading from './loading';
 import { Suspense } from 'react';
-import TopRated from './rated/TopRated';
 
 type Movie = {
   id: number;
@@ -57,6 +56,33 @@ export default async function Home(props: {
         </div>
       );
     }
+  } else {
+    const res = await fetch(
+      `
+https://api.themoviedb.org/3/movie/top_rated?&page=${currentPage}`,
+      {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: `Bearer ${apitoken}`,
+        },
+      }
+    );
+
+    const data = await res.json();
+    movies = (await data.results) || [];
+    totalPages = data.total_pages || 0;
+
+    if (movies.length == 0) {
+      return (
+        <div className="movie-container">
+          <div className="search-bar">
+            <SearchBar />
+          </div>
+          <div className="no-search-container"></div>
+        </div>
+      );
+    }
   }
 
   return (
@@ -70,17 +96,13 @@ export default async function Home(props: {
         {movies.map((movie: Movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
-        {query ? (
-          <Suspense key={query + currentPage} fallback={<Loading />}>
-            <PaginationHandler
-              currentPage={currentPage}
-              query={query}
-              totalResults={totalPages}
-            />
-          </Suspense>
-        ) : (
-          <TopRated />
-        )}
+        <Suspense key={query + currentPage} fallback={<Loading />}>
+          <PaginationHandler
+            currentPage={currentPage}
+            query={query}
+            totalResults={totalPages}
+          />
+        </Suspense>
         <GoUpButton />
       </div>
     </>
