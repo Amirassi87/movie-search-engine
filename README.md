@@ -7,7 +7,7 @@
 [https://movie-search-engine-kohl.vercel.app/](https://movie-search-engine-kohl.vercel.app/)
 
 <h2 align="center">Project Screenshots:</h2>
-<img src="https://i.ibb.co/MxSCYFyY/recording-ezgif-com-resize.gif" alt="project-screenshot" width="800" height="800/">
+<img src="https://i.ibb.co/rR0cbC0W/recording-ezgif-com-crop.gif" alt="project-screenshot" width="800" height="800/">
 
 <p><br>Search tab contains search input field and top rated movies with pagination</p>
 <img src="https://i.ibb.co/YBbWCq2C/1-Copy.png" width="800" height="800/">
