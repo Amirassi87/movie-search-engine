@@ -8,17 +8,15 @@
 
 <br>
 <h2 align="center">Project Screenshots:</h2>
-<br>
-<img src="https://pouch.jumpshare.com/preview/wKwreMv75vpW36kFU1xe1grpDrH8W4ab6bPkw51RSQIyrHPd84Yn7o9Tse7hxz7hnfSrJJv0Tq1vPFYEn0QLjQ2WXegUeMFRl2zZpoBiY1U" alt="project-screenshot" width="900" height="900/">
+<img src="https://pouch.jumpshare.com/preview/wKwreMv75vpW36kFU1xe1grpDrH8W4ab6bPkw51RSQIyrHPd84Yn7o9Tse7hxz7hnfSrJJv0Tq1vPFYEn0QLjQ2WXegUeMFRl2zZpoBiY1U" alt="project-screenshot" width="800" height="800/">
 
 <p><br>Search tab contains search input field and top rated movies with pagination</p>
-<img src="https://i.ibb.co/Y7rggHsV/1.png" alt="project-screenshot" width="900" height="900/">
-<br><br><br>
-<img src=" https://i.ibb.co/Z1Lmgf56/2.png" alt="project-screenshot" width="900" height="900/">
+<img src="https://i.ibb.co/Y7rggHsV/1.png" alt="project-screenshot" width="800" height="800/">
+<img src=" https://i.ibb.co/Z1Lmgf56/2.png" alt="project-screenshot" width="800" height="800/">
 <br><br>
 <p><br>Rated tab contains guest user rated movies</p>
 
-<img src="https://i.ibb.co/LhBvKbD2/3.png" alt="project-screenshot" width="900" height="900/">
+<img src="https://i.ibb.co/LhBvKbD2/3.png" alt="project-screenshot" width="800" height="800/">
 
 <h2>🧐 Features</h2>
 
