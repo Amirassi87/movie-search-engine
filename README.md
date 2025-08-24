@@ -26,6 +26,7 @@ Movie Search (Main Tab):
 - Real-time search with debouncing for performance.
 - Pagination for browsing through search results.
 - Automatically creates a guest session on load to track rated movies.
+  <br>
   Rated Movies (Rated Tab):
 - Displays all movies rated by the current guest user.
 - Uses the guest session ID to fetch and display previously rated
