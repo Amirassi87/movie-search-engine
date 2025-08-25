@@ -1,8 +1,7 @@
 'use client';
 import React, { useContext, useState } from 'react';
-import { Rate } from 'antd';
+import { Rate, Spin } from 'antd';
 import { GuestSessionContext } from '../data/SessionData';
-import Loading from './loading';
 
 export default function RatingComponent({
   id,
@@ -42,7 +41,7 @@ export default function RatingComponent({
   };
 
   if (loading) {
-    return <Loading />;
+    return <Spin />;
   }
   return (
     <div>

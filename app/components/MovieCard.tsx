@@ -6,7 +6,7 @@ import { isValid, parseISO, format } from 'date-fns';
 import { shortenText } from '../utils/shortenText';
 import { GenreContext } from '../data/GenresData';
 import RatingComponent from '../components/RatingComponent';
-import Loading from '../loading';
+import { Spin } from 'antd';
 
 type Movie = {
   id: number;
@@ -70,7 +70,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
         <div className="movie-desc">{shortenText(movie.overview)}</div>
         <div className="rating">
           {movie.id && (
-            <Suspense key={movie.rating} fallback={<Loading />}>
+            <Suspense key={movie.rating} fallback={<Spin />}>
               <RatingComponent value={movie.rating} id={movie.id} />
             </Suspense>
           )}
