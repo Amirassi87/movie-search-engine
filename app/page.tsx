@@ -46,15 +46,16 @@ export default async function Home(props: {
     movies = (await data.results) || [];
     totalPages = data.total_pages || 0;
 
-    if (movies.length == 0 && query !== '') {
+    if (movies.length == 0) {
       return (
         <div className="movie-container">
           <div className="search-bar">
             <SearchBar />
           </div>
-          <div className="no-search-container"></div>
+          <div className="no-search-container">No Search Results Found</div>
         </div>
       );
+    } else {
     }
   } else {
     const res = await fetch(
